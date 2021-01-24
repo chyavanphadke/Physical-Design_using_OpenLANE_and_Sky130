@@ -8,7 +8,7 @@ Basic idea of Openlane is to have a complete flow
 
 
 
-- [Day 1](#Day-1)
+- [About The Project](#Day-1)
 - [Day 2](#Day-2)
 - [Day 3](#Day-3)
 - [Day 4](#Day-4)
@@ -16,7 +16,7 @@ Basic idea of Openlane is to have a complete flow
 
 
 
-## Day-1
+## About The Project
 
 This is an h1 heading
 
