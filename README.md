@@ -11,11 +11,6 @@ Basic idea of Openlane is to have a complete flow
 - [Heading](#heading)
   * [Sub-heading](#sub-heading)
 
-# Heading levels
-
-> This is a fixture to test heading levels
-
-<!-- toc -->
 
 ## Heading
 
