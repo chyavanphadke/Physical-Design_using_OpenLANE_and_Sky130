@@ -8,7 +8,7 @@ Basic idea of Openlane is to have a complete flow
 
 
 
-- [Heading](#Day 1)
+- [Heading](#Day-1)
   * [Sub-heading](#sub-heading)
   * [Sub-heading](#sub-heading)
 - [Heading](#Day 2)
@@ -18,7 +18,7 @@ Basic idea of Openlane is to have a complete flow
 
 
 
-## Day 1
+## Day-1
 
 This is an h1 heading
 
