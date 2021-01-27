@@ -133,3 +133,36 @@ Synthesis takes some time based on the size and complexity of the design. Comple
 -   Slack has to be positive always and negative slack indicates a violation in timing.
 
 Positive slack is required for the design to work properly. Here in taken example we have a slack of 1.27. So slack requirements are fulfilled.
+
+### IC Planning
+ IC Plannning or also called as Chip planning is the crutual step in Physical design flow. The important aspects like the area of the core, utilisation factor, Powe planning and cell placement are taken care in this stage.
+
+### Height and width of core
+-   Core is the section of chip where the fundamental logic is placed
+-   Die consists of core and it is a ssemiconductor material on which the circuit is fabricated.
+-   Utilisation factor is the ratio of Area occupied by netlist and the Total Area of core. The 100% utilisation refers to Utilisation factor being 1. However, in the practical scenarios only 50-60% utilisation is considered in order to provide place for other routing and filler cells etc.
+-   Aspect Ratio is the ratio o the heught and width of the core. The Aspect ratio of 1 refers to a square chip.
+
+### Pre-placed Cells
+-   Pre-placed cells are those which are implemented once and instantiated many times. The arrangement of these IPs in the chip is referred to as Floorplanning.
+-   These IPs/blocks have user defined locations and hence are placed in chip before the automated placement and routing.
+
+### Decoupling Capacitors
+-   Large complex circuits will have high amount of switching current.
+-   Noise mArgin specs define the logic'0' and logic '1' valid voltages and undefined regions.
+-   The high switching current demand can be solved by addition of decoupling capacitors in parallel with the circuit.
+
+### Power Planning
+-   The power planning should be done in a way that the driver and load be close to each other in the 'L' sense.
+-   The improper power planning i.e., single power and Ground lines can lead to 'Ground bounce' and 'Voltage Drrop'.
+-   So the plan should have multiple 'VDD', 'VSS' lines running through the circuit.
+
+### Pin Placement
+-   The conectivity of the chip to the outside world.
+-   The placement of the pins is dependent on the position (near/far) but not on the ordering.
+-   The clock ports are found to be bigger than the general data ports in order to necessitate for less resistance.
+- 
+### Placement and Routing
+-   Bind the netlist with the physical cells i.e., library cells
+-   Placement of the logic
+-   optimise the placement by inserting repeater
