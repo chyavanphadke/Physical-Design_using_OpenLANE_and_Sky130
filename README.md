@@ -1,4 +1,5 @@
 
+
 # Advanced-Physical-Design-using-OpenLANE-and-Sky130
 Workshop on: Advanced Physical Design using OpenLANE Sky130
 
@@ -8,12 +9,22 @@ location of the Openlane is in openlane_build_script/work/tools/openlane_working
 The basic idea of Openlane is to have a complete flow
 
 - [About The Project](#Day-1)
+- [Physical Design Flow](#Day-1)
 - [Opensource Tools used for RTL to GDSII](#Day-1)
-- [Day 2](#Day-2)
-- [Day 3](#Day-3)
-- [Day 4](#Day-4)
-- [Day 5](#Day-5)
-
+- [Installing the vsdflow Tool](#Day-1)
+- [Complete Flow of OpenLane](#Day-1)
+- [Different steps in VLSI Flow](#Day-1)
+   - [Synthesis](#Day-1)
+   - [Floorplan and PDN](#Day-1)
+   - [CTS ](#Day-1)
+   - [Routing](#Day-1)
+   - [GDSII Generation](#Day-1)
+   - [Checks](#Day-1)
+- [LAB Day 1](#Day-1)
+- [LAB Day 2](#Day-1)
+- [LAB Day 3](#Day-1)
+- [LAB Day 4](#Day-1)
+- [LAB Day 4](#Day-1)
 ## About The Project
 
 This project gives you an overall idea of Openlane opensource PDK a tool developed from complete automated flow from RTL to GSDII based on several components like OpenROAD, Yosys, Magic, Netgen, Fault, OpenPhySyn, etc. OpenLANE uses Skywater 130nm open-source PDK and can be used to produce hard macros and chips.
@@ -49,8 +60,76 @@ The main steps in the ASIC (Application-specific integrated circuit)  physical d
   chmod 777 opensource_eda_tool_install.sh
   ./opensource_eda_tool_install.sh
 ```
-## Day-1
-## Day-2
-## Day-3
-## Day-4
-## Day-5
+### Complete Flow of OpenLane
+![asd](https://raw.githubusercontent.com/chyavanphadke/Physical-Design_using_OpenLANE_and_Sky130/main/Images/openlane.flow.1.png)
+
+OpenLANE can also be run as interactively or as fully automated.
+
+#### Different steps in VLSI Flow:
+#### 1.  Synthesis
+-   Yosys : Performs RTL synthesis using GTech mapping
+-   abc : Performs technology mappin to standard cells described in the PDK. We can adjust synthesis techniques using different integrated abc scripts to get desired results
+-   OpenSTA : Performs static timing analysis on the resulting netlist to generate timing reports
+-   Fault : Scan-chain insertion used for testing post fabrication. Supports ATPG and test patterns compaction
+
+#### 2.   Floorplan and PDN
+-   Init_fp - Defines the core area for the macro as well as the rows (used for placement) and the tracks (used for routing)
+-   Ioplacer - Places the macro input and output ports
+-   PDN - Generates the power distribution network
+-   Tapcell - Inserts welltap and decap cells in the floorplan
+-   Placement – Placement is done in two steps, one with global placement in which we place the designs across the chip, but they will not be legal placement with some standard cells overlapping each other, to fix this we perform a detailed placement which legalizes the design and ensures they fit in the standard cell rows
+-   RePLace - Performs global placement
+-   Resizer - Performs optional optimizations on the design
+-   OpenPhySyn - Performs timing optimizations on the design
+-   OpenDP - Perfroms detailed placement to legalize the globally placed components
+
+#### 3. CTS
+-   TritonCTS - Synthesizes the clock distribution network
+
+#### 4.   Routing
+-   FastRoute - Performs global routing to generate a guide file for the detailed router
+-   TritonRoute - Performs detailed routing from global routing guides
+-   SPEF-Extractor - Performs SPEF extraction that include parasitic information
+
+#### 5.  GDSII Generation
+-   Magic - Streams out the final GDSII layout file from the routed def
+
+#### 6.  Checks
+-   Magic - Performs DRC Checks & Antenna Checks
+-   Netgen - Performs LVS Checks
+
+## LAB Day 1
+#### File structure inside openLane directory
+![](https://raw.githubusercontent.com/chyavanphadke/Physical-Design_using_OpenLANE_and_Sky130/main/Images/fileStructure.png)
+
+First step is to set the package required using:
+```
+pakage require openlane 0.9
+```
+Then design preparation is done using the following command:
+```
+prep -design designFolder -tag userDefinedOutputFolderName
+```
+![](https://raw.githubusercontent.com/chyavanphadke/Physical-Design_using_OpenLANE_and_Sky130/main/Images/design%20preparation.png)
+
+Adter running the prep command wait for the design preparaion to complete, it might take some time based on the configuration and the design file.
+
+![](https://raw.githubusercontent.com/chyavanphadke/Physical-Design_using_OpenLANE_and_Sky130/main/Images/preparation%20completed.png)
+
+wait for the "[INFO]: Preparation completed" conformation. The next step is to start the synthesis. The following command is used to start the synthesis.
+```
+run_synthesis
+```
+Synthesis takes some time based on the size and complexity of the design. Completion of the synthesis is displayed by "[INFO]: Synthesis is completed" message.
+![](https://raw.githubusercontent.com/chyavanphadke/Physical-Design_using_OpenLANE_and_Sky130/main/Images/synthesis%20completed.png)
+
+## LAB Day 2
+#### What is Slack
+-   It is difference between the desired arrival times and the actual arrival time for a signal.
+-   Slack time determines [for a timing path], if the design is working at the desired frequency.
+-   Positive Slack indicates that the design is meeting the timing and still it can be improved.
+-   Zero slack means that the design is critically working at the desired frequency.
+-   Negative slack means , design has not achieved the specified timings at the specified frequency.
+-   Slack has to be positive always and negative slack indicates a violation in timing.
+
+Positive slack is required for the design to work properly. Here in taken example we have a slack of 1.27. So slack requirements are fulfilled.
