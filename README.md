@@ -11,7 +11,7 @@ location of the Openlane is in openlane_build_script/work/tools/openlane_working
 
 The basic idea of Openlane is to have a complete flow
 
-- [About The Project](#Day-1)
+- [About The Project](#About_The_Project)
 - [Physical Design Flow](#Day-1)
 - [Opensource Tools used for RTL to GDSII](#Day-1)
 - [Installing the vsdflow Tool](#Day-1)
@@ -28,7 +28,7 @@ The basic idea of Openlane is to have a complete flow
 - [LAB Day 3](#Day-1)
 - [LAB Day 4](#Day-1)
 - [LAB Day 4](#Day-1)
-## About The Project
+## [About The Project](#About_The_Project)
 
 This project gives you an overall idea of Openlane opensource PDK a tool developed from complete automated flow from RTL to GSDII based on several components like OpenROAD, Yosys, Magic, Netgen, Fault, OpenPhySyn, etc. OpenLANE uses Skywater 130nm open-source PDK and can be used to produce hard macros and chips.
 
