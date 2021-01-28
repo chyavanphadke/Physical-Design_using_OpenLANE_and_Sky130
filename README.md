@@ -1,8 +1,3 @@
-
-
-
-
-
 # Advanced-Physical-Design-using-OpenLANE-and-Sky130
 Workshop on: Advanced Physical Design using OpenLANE Sky130
 
@@ -29,6 +24,8 @@ The basic idea of Openlane is to have a complete flow
 - [LAB Day 4](#Day-1)
 - [LAB Day 4](#Day-1)
 ## About The Project
+
+## <a name="About_The_Project"></a>About The Project
 
 This project gives you an overall idea of Openlane opensource PDK a tool developed from complete automated flow from RTL to GSDII based on several components like OpenROAD, Yosys, Magic, Netgen, Fault, OpenPhySyn, etc. OpenLANE uses Skywater 130nm open-source PDK and can be used to produce hard macros and chips.
 
@@ -287,5 +284,7 @@ Parasitic extraction is the calculation of the parasitic effects in both the des
 
 
 ## Acknowledgements:
-Kunal Ghosh, Co-founder (VSD Corp. Pvt. Ltd)
-Nickson P Jose, Teaching Assistant (VSD Corp. Pvt. Ltd)
+- Nickson Jose - VSD VLSI Engineer
+- Kunal Ghosh, Co-founder (VSD Corp. Pvt. Ltd)
+- Nickson P Jose, Teaching Assistant (VSD Corp. Pvt. Ltd)
+- Sai Swaroop Mishra
