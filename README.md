@@ -7,29 +7,27 @@ location of the Openlane is in openlane_build_script/work/tools/openlane_working
 The basic idea of Openlane is to have a complete flow
 
 - [About The Project](#About_The_Project)
-- [Physical Design Flow](#Day-1)
-- [Opensource Tools used for RTL to GDSII](#Day-1)
-- [Installing the vsdflow Tool](#Day-1)
-- [Complete Flow of OpenLane](#Day-1)
-- [Different steps in VLSI Flow](#Day-1)
-   - [Synthesis](#Day-1)
-   - [Floorplan and PDN](#Day-1)
-   - [CTS ](#Day-1)
-   - [Routing](#Day-1)
-   - [GDSII Generation](#Day-1)
-   - [Checks](#Day-1)
-- [LAB Day 1](#Day-1)
-- [LAB Day 2](#Day-1)
-- [LAB Day 3](#Day-1)
-- [LAB Day 4](#Day-1)
-- [LAB Day 4](#Day-1)
-## About The Project
-
-## <a name="About_The_Project"></a>About The Project
+- [Physical Design Flow](#Physical_Design_Flow)
+- [Opensource Tools used for RTL to GDSII](#Opensource_Tools_used_for_RTL_to_GDSII)
+- [Installing the vsdflow Tool](#Installing_the_vsdflow_Tool)
+- [Complete Flow of OpenLane](#Complete_Flow_of_OpenLane)
+- [Different steps in VLSI Flow](#Different_steps_in_VLSI_Flow)
+   - [Synthesis](#Synthesis)
+   - [Floorplan and PDN](#Floorplan_and_PDN)
+   - [CTS ](#CTS )
+   - [Routing](#Routing)
+   - [GDSII Generation](#GDSII_Generation)
+   - [Checks](#Checks)
+- [LAB Day 1](#LAB_Day_1)
+- [LAB Day 2](#LAB_Day_2)
+- [LAB Day 3](#LAB_Day_3)
+- [LAB Day 4](#LAB_Day_4)
+- [LAB Day 4](#LAB_Day_5)
+# <a name="About_The_Project"></a>About The Project
 
 This project gives you an overall idea of Openlane opensource PDK a tool developed from complete automated flow from RTL to GSDII based on several components like OpenROAD, Yosys, Magic, Netgen, Fault, OpenPhySyn, etc. OpenLANE uses Skywater 130nm open-source PDK and can be used to produce hard macros and chips.
 
-## Physical Design Flow
+## <a name="Physical_Design_Flow"></a>Physical Design Flow
 ![](https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/PhysicalDesign.png/1024px-PhysicalDesign.png)
 Image Source : [wikipedia](https://en.wikipedia.org/wiki/Physical_design_(electronics))
 
@@ -43,7 +41,7 @@ The main steps in the ASIC (Application-specific integrated circuit)  physical d
 -   Physical Verification
 -   Layout Post Processing with Mask Data Generation
 
-###  Opensource Tools used for RTL to GDSII
+## <a name="Opensource_Tools_used_for_RTL_to_GDSII"></a>Opensource Tools used for RTL to GDSII
 ```
    YOSYS- Logic synthesis
    GREYWOLF- Placement 
@@ -53,26 +51,27 @@ The main steps in the ASIC (Application-specific integrated circuit)  physical d
    eSPICE - For SPICE simulations with schematically capturing the responses and functionality.
    Qflow - It is provided to ease the total design process for the complete flow of RTL to GDSII 
 ```
-### Installing the vsdflow Tool
+
+## <a name="Installing_the_vsdflow_Tool"></a>Installing the vsdflow Tool
 ```
   git clone https://github.com/kunalg123/vsdflow.git
   cd vsdflow
   chmod 777 opensource_eda_tool_install.sh
   ./opensource_eda_tool_install.sh
 ```
-### Complete Flow of OpenLane
+## <a name="Complete_Flow_of_OpenLane"></a>Complete Flow of OpenLane
 ![asd](https://raw.githubusercontent.com/chyavanphadke/Physical-Design_using_OpenLANE_and_Sky130/main/Images/openlane.flow.1.png)
 
 OpenLANE can also be run as interactively or as fully automated.
 
-#### Different steps in VLSI Flow:
-#### 1.  Synthesis
+## <a name="Different_steps_in_VLSI_Flow"></a>Different steps in VLSI Flow
+#### <a name="Synthesis"></a>1. Synthesis
 -   Yosys : Performs RTL synthesis using GTech mapping
 -   abc : Performs technology mapping to standard cells described in the PDK. We can adjust synthesis techniques using different integrated abc scripts to get desired results
 -   OpenSTA : Performs static timing analysis on the resulting netlist to generate timing reports
 -   Fault : Scan-chain insertion used for testing post-fabrication. Supports ATPG and test patterns compaction
 
-#### 2.   Floorplan and PDN
+#### <a name=" Floorplan_and_PDN"></a>2.  Floorplan and PDN
 -   Init_fp - Defines the core area for the macro as well as the rows (used for placement) and the tracks (used for routing)
 -   Ioplacer - Places the macro input and output ports
 -   PDN - Generates the power distribution network
@@ -83,22 +82,23 @@ OpenLANE can also be run as interactively or as fully automated.
 -   OpenPhySyn - Performs timing optimizations on the design
 -   OpenDP - Performs detailed placement to legalize the globally placed components
 
-#### 3. CTS
+#### <a name="CTS"></a>3.CTS
 -   TritonCTS - Synthesizes the clock distribution network
 
-#### 4.   Routing
+#### <a name="Routing"></a>4. Routing
 -   FastRoute - Performs global routing to generate a guide file for the detailed router
 -   TritonRoute - Performs detailed routing from global routing guides
 -   SPEF-Extractor - Performs SPEF extraction that includes parasitic information
-
+#### <a name="Synthesis"></a>1. Synthesis
 #### 5.  GDSII Generation
 -   Magic - Streams out the final GDSII layout file from the routed def
-
+#### <a name="Synthesis"></a>1. Synthesis
 #### 6.  Checks
 -   Magic - Performs DRC Checks & Antenna Checks
 -   Netgen - Performs LVS Checks
+- 
+## <a name="LAB_Day_1"></a>LAB Day 1
 
-## LAB Day 1
 #### File structure inside openLane directory
 ![](https://raw.githubusercontent.com/chyavanphadke/Physical-Design_using_OpenLANE_and_Sky130/main/Images/fileStructure.png)
 
@@ -122,7 +122,9 @@ run_synthesis
 ```
 Synthesis takes some time based on the size and complexity of the design. Completion of the synthesis is displayed by "[INFO]: Synthesis is completed" message.
 ![](https://raw.githubusercontent.com/chyavanphadke/Physical-Design_using_OpenLANE_and_Sky130/main/Images/synthesis%20completed.png)
-## LAB Day 3
+
+## <a name="LAB_Day_2"></a>LAB Day 2
+
 ### Tools Installed 
 - Static Timing Analysis tool successfully in place.
 ![](https://raw.githubusercontent.com/chyavanphadke/Physical-Design_using_OpenLANE_and_Sky130/main/Images/staSuccess.png)
@@ -140,7 +142,8 @@ Synthesis takes some time based on the size and complexity of the design. Comple
 - Qflow GUI
 ![](https://raw.githubusercontent.com/chyavanphadke/Physical-Design_using_OpenLANE_and_Sky130/main/Images/qflowSuccess.png) 
 
-## LAB Day 3
+## <a name="LAB_Day_3"></a>LAB Day 3
+
 #### What is Slack
 -   It is the difference between the desired arrival times and the actual arrival time for a signal.
 -   Slack time determines [for a timing path], if the design is working at the desired frequency.
@@ -198,7 +201,7 @@ qflow display picorv32 &
 The tkcon window and the magic window will open with the layout in it and the 'box' command gives the area estimation of the design.
 ![](https://raw.githubusercontent.com/chyavanphadke/Physical-Design_using_OpenLANE_and_Sky130/main/Images/lab3_layout.png)
 
-## LAB Day 4
+## <a name="LAB_Day_4"></a>LAB Day 4
 
 Static timing analysis and concepts of clock tree synthesis.
 First timing analysis is done using delay tables, then using ideal clocks, then using real clocks.
@@ -241,8 +244,7 @@ Some techniques are used to achieve a good CTS
 -   Using buffers (since H-Tree do not avoid long paths, we need to put buffers)
 -   Net shielding (to avoid crosstalk/glitches)
 
-
-## LAB Day 5
+## <a name="LAB_Day_5"></a>LAB Day 5
 On day 5 the main concentration was on Routing and finishing up the Design.
 
 ### Adding grids and Routing
