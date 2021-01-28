@@ -28,7 +28,7 @@ The basic idea of Openlane is to have a complete flow
 - [LAB Day 3](#Day-1)
 - [LAB Day 4](#Day-1)
 - [LAB Day 4](#Day-1)
-## [About The Project](#About_The_Project)
+## About The Project
 
 This project gives you an overall idea of Openlane opensource PDK a tool developed from complete automated flow from RTL to GSDII based on several components like OpenROAD, Yosys, Magic, Netgen, Fault, OpenPhySyn, etc. OpenLANE uses Skywater 130nm open-source PDK and can be used to produce hard macros and chips.
 
@@ -284,3 +284,8 @@ DRC is a major step during physical verification signoff on the design, which al
 
 ### Parasitics Extraction
 Parasitic extraction is the calculation of the parasitic effects in both the designed devices and the required wiring interconnects of an electronic circuit: parasitic capacitances, parasitic resistances, and parasitic inductances, commonly called parasitic devices, parasitic components, or simply parasitics.
+
+
+## Acknowledgements:
+Kunal Ghosh, Co-founder (VSD Corp. Pvt. Ltd)
+Nickson P Jose, Teaching Assistant (VSD Corp. Pvt. Ltd)
