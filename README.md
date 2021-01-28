@@ -127,9 +127,11 @@ Synthesis takes some time based on the size and complexity of the design. Comple
 
 ### Tools Installed 
 - Static Timing Analysis tool successfully in place.
+
 ![](https://raw.githubusercontent.com/chyavanphadke/Physical-Design_using_OpenLANE_and_Sky130/main/Images/staSuccess.png)
 
 - Yosys installed successfully
+
 ![](https://raw.githubusercontent.com/chyavanphadke/Physical-Design_using_OpenLANE_and_Sky130/main/Images/yosysSuccess.png)
 
 - OpenTimer installed and working check
@@ -137,9 +139,11 @@ Synthesis takes some time based on the size and complexity of the design. Comple
 ![](https://raw.githubusercontent.com/chyavanphadke/Physical-Design_using_OpenLANE_and_Sky130/main/Images/opentimerSuccess.png)
 
 - GrayWolf tool inplace
+
 ![](https://raw.githubusercontent.com/chyavanphadke/Physical-Design_using_OpenLANE_and_Sky130/main/Images/graywolfSuccess.png)
 
 - Qflow GUI
+
 ![](https://raw.githubusercontent.com/chyavanphadke/Physical-Design_using_OpenLANE_and_Sky130/main/Images/qflowSuccess.png) 
 
 ## <a name="LAB_Day_3"></a>LAB Day 3
