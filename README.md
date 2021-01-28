@@ -1,6 +1,3 @@
-
-
-
 # Advanced-Physical-Design-using-OpenLANE-and-Sky130
 Workshop on: Advanced Physical Design using OpenLANE Sky130
 
@@ -52,7 +49,7 @@ The main steps in the ASIC (Application-specific integrated circuit)  physical d
    OPEN_TIMER- Static timing analysis
    MAGIC - layout viewer
    eSPICE - For SPICE simulations with schematically capturing the responses and functionality.
-   Qflow - It is provided in order to ease the total design process for complete flow of RTL to GDSII 
+   Qflow - It is provided to ease the total design process for the complete flow of RTL to GDSII 
 ```
 ### Installing the vsdflow Tool
 ```
@@ -69,20 +66,20 @@ OpenLANE can also be run as interactively or as fully automated.
 #### Different steps in VLSI Flow:
 #### 1.  Synthesis
 -   Yosys : Performs RTL synthesis using GTech mapping
--   abc : Performs technology mappin to standard cells described in the PDK. We can adjust synthesis techniques using different integrated abc scripts to get desired results
+-   abc : Performs technology mapping to standard cells described in the PDK. We can adjust synthesis techniques using different integrated abc scripts to get desired results
 -   OpenSTA : Performs static timing analysis on the resulting netlist to generate timing reports
--   Fault : Scan-chain insertion used for testing post fabrication. Supports ATPG and test patterns compaction
+-   Fault : Scan-chain insertion used for testing post-fabrication. Supports ATPG and test patterns compaction
 
 #### 2.   Floorplan and PDN
 -   Init_fp - Defines the core area for the macro as well as the rows (used for placement) and the tracks (used for routing)
 -   Ioplacer - Places the macro input and output ports
 -   PDN - Generates the power distribution network
--   Tapcell - Inserts welltap and decap cells in the floorplan
+-   Tap cell - Inserts well tap and decap cells in the floorplan
 -   Placement – Placement is done in two steps, one with global placement in which we place the designs across the chip, but they will not be legal placement with some standard cells overlapping each other, to fix this we perform a detailed placement which legalizes the design and ensures they fit in the standard cell rows
 -   RePLace - Performs global placement
 -   Resizer - Performs optional optimizations on the design
 -   OpenPhySyn - Performs timing optimizations on the design
--   OpenDP - Perfroms detailed placement to legalize the globally placed components
+-   OpenDP - Performs detailed placement to legalize the globally placed components
 
 #### 3. CTS
 -   TritonCTS - Synthesizes the clock distribution network
@@ -90,7 +87,7 @@ OpenLANE can also be run as interactively or as fully automated.
 #### 4.   Routing
 -   FastRoute - Performs global routing to generate a guide file for the detailed router
 -   TritonRoute - Performs detailed routing from global routing guides
--   SPEF-Extractor - Performs SPEF extraction that include parasitic information
+-   SPEF-Extractor - Performs SPEF extraction that includes parasitic information
 
 #### 5.  GDSII Generation
 -   Magic - Streams out the final GDSII layout file from the routed def
@@ -113,11 +110,11 @@ prep -design designFolder -tag userDefinedOutputFolderName
 ```
 ![](https://raw.githubusercontent.com/chyavanphadke/Physical-Design_using_OpenLANE_and_Sky130/main/Images/design%20preparation.png)
 
-Adter running the prep command wait for the design preparaion to complete, it might take some time based on the configuration and the design file.
+Adter running the prep command wait for the design preparation to complete, it might take some time based on the configuration and the design file.
 
 ![](https://raw.githubusercontent.com/chyavanphadke/Physical-Design_using_OpenLANE_and_Sky130/main/Images/preparation%20completed.png)
 
-wait for the "[INFO]: Preparation completed" conformation. The next step is to start the synthesis. The following command is used to start the synthesis.
+wait for the "[INFO]: Preparation completed" confirmation. The next step is to start the synthesis. The following command is used to start the synthesis.
 ```
 run_synthesis
 ```
@@ -125,10 +122,10 @@ Synthesis takes some time based on the size and complexity of the design. Comple
 ![](https://raw.githubusercontent.com/chyavanphadke/Physical-Design_using_OpenLANE_and_Sky130/main/Images/synthesis%20completed.png)
 ## LAB Day 3
 ### Tools Installed 
-- Static Timing Analysis tool succesfully in place.
+- Static Timing Analysis tool successfully in place.
 ![](https://raw.githubusercontent.com/chyavanphadke/Physical-Design_using_OpenLANE_and_Sky130/main/Images/staSuccess.png)
 
-- Yosys installed succesfully
+- Yosys installed successfully
 ![](https://raw.githubusercontent.com/chyavanphadke/Physical-Design_using_OpenLANE_and_Sky130/main/Images/yosysSuccess.png)
 
 - OpenTimer installed and working check
@@ -142,47 +139,47 @@ Synthesis takes some time based on the size and complexity of the design. Comple
 
 ## LAB Day 3
 #### What is Slack
--   It is difference between the desired arrival times and the actual arrival time for a signal.
+-   It is the difference between the desired arrival times and the actual arrival time for a signal.
 -   Slack time determines [for a timing path], if the design is working at the desired frequency.
 -   Positive Slack indicates that the design is meeting the timing and still it can be improved.
 -   Zero slack means that the design is critically working at the desired frequency.
--   Negative slack means , design has not achieved the specified timings at the specified frequency.
+-   Negative slack means, the design has not achieved the specified timings at the specified frequency.
 -   Slack has to be positive always and negative slack indicates a violation in timing.
 
-Positive slack is required for the design to work properly. Here in taken example we have a slack of 1.27. So slack requirements are fulfilled.
+Positive slack is required for the design to work properly. Here is taken example, we have a slack of 1.27. So slack requirements are fulfilled.
 
 ### IC Planning
- IC Plannning or also called as Chip planning is the crutual step in Physical design flow. The important aspects like the area of the core, utilisation factor, Powe planning and cell placement are taken care in this stage.
+ IC Planning or also called Chip planning is the crucial step in Physical design flow. The important aspects like the area of the core, utilization factor, Powe planning, and cell placement are taken care of in this stage.
 
-### Height and width of core
--   Core is the section of chip where the fundamental logic is placed
--   Die consists of core and it is a ssemiconductor material on which the circuit is fabricated.
--   Utilisation factor is the ratio of Area occupied by netlist and the Total Area of core. The 100% utilisation refers to Utilisation factor being 1. However, in the practical scenarios only 50-60% utilisation is considered in order to provide place for other routing and filler cells etc.
--   Aspect Ratio is the ratio o the heught and width of the core. The Aspect ratio of 1 refers to a square chip.
+### Height and width of the core
+-   Core is the section of the chip where the fundamental logic is placed
+-   Die consists of a core and it is a semiconductor material on which the circuit is fabricated.
+-   Utilisation factor is the ratio of Area occupied by netlist and the Total Area of the core. The 100% utilization refers to the Utilisation factor being 1. However, in the practical scenarios, only 50-60% utilization is considered to provide a place for other routing and filler cells, etc.
+-   Aspect Ratio is the ratio o the height and width of the core. The Aspect ratio of 1 refers to a square chip.
 
 ### Pre-placed Cells
 -   Pre-placed cells are those which are implemented once and instantiated many times. The arrangement of these IPs in the chip is referred to as Floorplanning.
--   These IPs/blocks have user defined locations and hence are placed in chip before the automated placement and routing.
+-   These IPs/blocks have user-defined locations and hence are placed in the chip before the automated placement and routing.
 
 ### Decoupling Capacitors
--   Large complex circuits will have high amount of switching current.
+-   Large complex circuits will have a high amount of switching current.
 -   Noise mArgin specs define the logic'0' and logic '1' valid voltages and undefined regions.
--   The high switching current demand can be solved by addition of decoupling capacitors in parallel with the circuit.
+-   The high switching current demand can be solved by the addition of decoupling capacitors in parallel with the circuit.
 
 ### Power Planning
 -   The power planning should be done in a way that the driver and load be close to each other in the 'L' sense.
--   The improper power planning i.e., single power and Ground lines can lead to 'Ground bounce' and 'Voltage Drrop'.
+-   The improper power planning i.e., single power and Ground lines can lead to 'Ground bounce' and 'Voltage Drop'.
 -   So the plan should have multiple 'VDD', 'VSS' lines running through the circuit.
 
 ### Pin Placement
--   The conectivity of the chip to the outside world.
+-   The connectivity of the chip to the outside world.
 -   The placement of the pins is dependent on the position (near/far) but not on the ordering.
--   The clock ports are found to be bigger than the general data ports in order to necessitate for less resistance.
+-   The clock ports are found to be bigger than the general data ports to necessitate less resistance.
 - 
 ### Placement and Routing
 -   Bind the netlist with the physical cells i.e., library cells
 -   Placement of the logic
--   optimise the placement by inserting repeater
+- optimize the placement by inserting a repeater
 
 #### Placement is run using the following command
 The command to invoke the picorv32 design in the QFLOW manager is
@@ -199,10 +196,85 @@ The tkcon window and the magic window will open with the layout in it and the 'b
 ![](https://raw.githubusercontent.com/chyavanphadke/Physical-Design_using_OpenLANE_and_Sky130/main/Images/lab3_layout.png)
 
 ## LAB Day 4
-![](https://raw.githubusercontent.com/chyavanphadke/Physical-Design_using_OpenLANE_and_Sky130/main/Images/day4_pic2.png)
 
+Static timing analysis and concepts of clock tree synthesis.
+First timing analysis is done using delay tables, then using ideal clocks, then using real clocks.
+
+Finding the Switching threshold
+```
+cd
+cd ngspice_labs
+ngspice inv.spice
+run
+setplot dc1
+```
 ![](https://raw.githubusercontent.com/chyavanphadke/Physical-Design_using_OpenLANE_and_Sky130/main/Images/day4_pic3.png)
 
-![](https://raw.githubusercontent.com/chyavanphadke/Physical-Design_using_OpenLANE_and_Sky130/main/Images/day4_pic5.png)
-
+The expanded plot of the above graph
 ![](https://raw.githubusercontent.com/chyavanphadke/Physical-Design_using_OpenLANE_and_Sky130/main/Images/day4_pic6.png)
+
+Layout view of s small area. Polysilicon strips are highlighted with nmos and pmos
+![](https://raw.githubusercontent.com/chyavanphadke/Physical-Design_using_OpenLANE_and_Sky130/main/Images/day4_pic2.png)
+
+### Timing Modeling
+Timing modeling is performed with the use of delay tables. Depending upon the input slew and output load we can get the delay for the buffer or any other gate.
+
+To model timing for clock tree structures, is necessary to take care with:
+-   at every level, each node drive the same load;
+-   identical buffers need to be used at the same level.
+
+### Timing analysis (with ideal clock)
+If T is the clock period and td is the combinational logic delay, then T>td.
+If the setup time for the capture flipflop is S, the T > td + S. Otherwise there will be a setup time violation.
+
+If the jitter is considered then T > td + S + SU. Otherwise, there will be a violation.
+Jitter is a temporary timing problem that can be removed if the semiconductor temperature and power noise are maintained correctly.
+
+### Clock Tree Synthesis (CTS)
+The main reason for performing CTS is to remove clock skew. Ideally, it should be 0.
+Some techniques are used to achieve a good CTS
+
+-   H-Tree technique (midpoints to derive clock)
+-   Using buffers (since H-Tree do not avoid long paths, we need to put buffers)
+-   Net shielding (to avoid crosstalk/glitches)
+
+
+## LAB Day 5
+On day 5 the main concentration was on Routing and finishing up the Design.
+
+### Adding grids and Routing
+
+1.  Routing involves generating metal wires to connect the pins of the same signal while obeying manufacturing design rules.
+2.  Before routing is performed on the design, cell placement has to be carried out wherein the cells used in the design are placed.
+3.  The connections between the pins of the cells about the same signal need to be made. At the time of placement, there are only logical connections between these pins.
+4.  The physical connections are made by routing. More generally speaking, routing is to locate a set of wires in the routing space to connect all the nets in the netlist taking into consideration routing channels’ capacities, wire widths, and crossings, etc.
+5.  The objective of routing is to minimize total wire length and number of vias and that each net meets its timing budget. The tools that perform routing are termed routers.
+6.  You typically provide them with a placed netlist along with a list of timing critical nets. These tools, in turn, provide you with the geometry of all the nets in the design.
+
+The Maze Algorithm is also known as Lee´s Algorithm
+-   This algorithm creates a routing grid
+-   It finds the best route from a source to a target
+-   It is an automated process
+
+
+### DRC (Design Rule Check)
+DRC is a major step during physical verification signoff on the design, which also involves LVS (layout versus schematic) checks, XOR checks, ERC (electrical rule check), and antenna checks. The importance of design rules and DRC is greatest for ICs, which have micro- or nano-scale geometries; for advanced processes, some fabs also insist upon the use of more restricted rules to improve yield.
+
+#### Types of DRCs
+-   Minimum width and spacing for metal
+-   Minimum width and spacing for via
+-   Fat wire Via keep out Enclosure
+-   End of Line spacing
+-   Minimum area
+-   Over Max stack level
+-   Wide metal jog
+-   Misaligned Via wire
+-   Different net spacing
+-   Special notch spacing
+-   Shorts violation
+-   Different net Via cut spacing
+-   Less than min edge length
+
+
+### Parasitics Extraction
+Parasitic extraction is the calculation of the parasitic effects in both the designed devices and the required wiring interconnects of an electronic circuit: parasitic capacitances, parasitic resistances, and parasitic inductances, commonly called parasitic devices, parasitic components, or simply parasitics.
