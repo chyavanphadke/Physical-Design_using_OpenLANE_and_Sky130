@@ -1,5 +1,6 @@
 
 
+
 # Advanced-Physical-Design-using-OpenLANE-and-Sky130
 Workshop on: Advanced Physical Design using OpenLANE Sky130
 
@@ -198,3 +199,10 @@ The tkcon window and the magic window will open with the layout in it and the 'b
 ![](https://raw.githubusercontent.com/chyavanphadke/Physical-Design_using_OpenLANE_and_Sky130/main/Images/lab3_layout.png)
 
 ## LAB Day 4
+![](https://raw.githubusercontent.com/chyavanphadke/Physical-Design_using_OpenLANE_and_Sky130/main/Images/day4_pic2.png)
+
+![](https://raw.githubusercontent.com/chyavanphadke/Physical-Design_using_OpenLANE_and_Sky130/main/Images/day4_pic3.png)
+
+![](https://raw.githubusercontent.com/chyavanphadke/Physical-Design_using_OpenLANE_and_Sky130/main/Images/day4_pic5.png)
+
+![](https://raw.githubusercontent.com/chyavanphadke/Physical-Design_using_OpenLANE_and_Sky130/main/Images/day4_pic6.png)
