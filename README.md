@@ -214,12 +214,15 @@ ngspice inv.spice
 run
 setplot dc1
 ```
+
 ![](https://raw.githubusercontent.com/chyavanphadke/Physical-Design_using_OpenLANE_and_Sky130/main/Images/day4_pic3.png)
 
 The expanded plot of the above graph
+
 ![](https://raw.githubusercontent.com/chyavanphadke/Physical-Design_using_OpenLANE_and_Sky130/main/Images/day4_pic6.png)
 
 Layout view of s small area. Polysilicon strips are highlighted with nmos and pmos
+
 ![](https://raw.githubusercontent.com/chyavanphadke/Physical-Design_using_OpenLANE_and_Sky130/main/Images/day4_pic2.png)
 
 ### Timing Modeling
