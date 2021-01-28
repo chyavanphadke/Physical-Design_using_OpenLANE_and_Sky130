@@ -122,8 +122,24 @@ run_synthesis
 ```
 Synthesis takes some time based on the size and complexity of the design. Completion of the synthesis is displayed by "[INFO]: Synthesis is completed" message.
 ![](https://raw.githubusercontent.com/chyavanphadke/Physical-Design_using_OpenLANE_and_Sky130/main/Images/synthesis%20completed.png)
+## LAB Day 3
+### Tools Installed 
+- Static Timing Analysis tool succesfully in place.
+![](https://raw.githubusercontent.com/chyavanphadke/Physical-Design_using_OpenLANE_and_Sky130/main/Images/staSuccess.png)
 
-## LAB Day 2
+- Yosys installed succesfully
+![](https://raw.githubusercontent.com/chyavanphadke/Physical-Design_using_OpenLANE_and_Sky130/main/Images/yosysSuccess.png)
+
+- OpenTimer installed and working check
+![](https://raw.githubusercontent.com/chyavanphadke/Physical-Design_using_OpenLANE_and_Sky130/main/Images/opentimerSuccess.png)
+
+- GrayWolf tool inplace
+![](https://raw.githubusercontent.com/chyavanphadke/Physical-Design_using_OpenLANE_and_Sky130/main/Images/graywolfSuccess.png)
+
+- Qflow GUI
+![](https://raw.githubusercontent.com/chyavanphadke/Physical-Design_using_OpenLANE_and_Sky130/main/Images/qflowSuccess.png) 
+
+## LAB Day 3
 #### What is Slack
 -   It is difference between the desired arrival times and the actual arrival time for a signal.
 -   Slack time determines [for a timing path], if the design is working at the desired frequency.
@@ -166,3 +182,19 @@ Positive slack is required for the design to work properly. Here in taken exampl
 -   Bind the netlist with the physical cells i.e., library cells
 -   Placement of the logic
 -   optimise the placement by inserting repeater
+
+#### Placement is run using the following command
+The command to invoke the picorv32 design in the QFLOW manager is
+```
+Qflow gui &
+```
+![](https://raw.githubusercontent.com/chyavanphadke/Physical-Design_using_OpenLANE_and_Sky130/main/Images/lab3_Placement.png)
+
+The layout of the picorv32 design is displayed using the following command
+```
+qflow display picorv32 &
+```
+The tkcon window and the magic window will open with the layout in it and the 'box' command gives the area estimation of the design.
+![](https://raw.githubusercontent.com/chyavanphadke/Physical-Design_using_OpenLANE_and_Sky130/main/Images/lab3_layout.png)
+
+## LAB Day 4
