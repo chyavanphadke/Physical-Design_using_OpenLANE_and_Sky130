@@ -22,7 +22,7 @@ The basic idea of Openlane is to have a complete flow
 - [LAB Day 2](#LAB_Day_2)
 - [LAB Day 3](#LAB_Day_3)
 - [LAB Day 4](#LAB_Day_4)
-- [LAB Day 4](#LAB_Day_5)
+- [LAB Day 5](#LAB_Day_5)
 # <a name="About_The_Project"></a>About The Project
 
 This project gives you an overall idea of Openlane opensource PDK a tool developed from complete automated flow from RTL to GSDII based on several components like OpenROAD, Yosys, Magic, Netgen, Fault, OpenPhySyn, etc. OpenLANE uses Skywater 130nm open-source PDK and can be used to produce hard macros and chips.
