@@ -51,8 +51,8 @@ The main steps in the ASIC (Application-specific integrated circuit)  physical d
    eSPICE - For SPICE simulations with schematically capturing the responses and functionality.
    Qflow - It is provided to ease the total design process for the complete flow of RTL to GDSII 
 ```
-### [back to table of contents](#Advanced-Physical-Design-using-OpenLANE-and-Sky130)
-### back to [table of contents](#Advanced-Physical-Design-using-OpenLANE-and-Sky130)
+#### back to [the top](#Advanced-Physical-Design-using-OpenLANE-and-Sky130)
+
 ## <a name="Installing_the_vsdflow_Tool"></a>Installing the vsdflow Tool
 ```
   git clone https://github.com/kunalg123/vsdflow.git
@@ -60,6 +60,8 @@ The main steps in the ASIC (Application-specific integrated circuit)  physical d
   chmod 777 opensource_eda_tool_install.sh
   ./opensource_eda_tool_install.sh
 ```
+#### back to [the top](#Advanced-Physical-Design-using-OpenLANE-and-Sky130)
+
 ## <a name="Complete_Flow_of_OpenLane"></a>Complete Flow of OpenLane
 ![asd](https://raw.githubusercontent.com/chyavanphadke/Physical-Design_using_OpenLANE_and_Sky130/main/Images/openlane.flow.1.png)
 
@@ -97,7 +99,8 @@ OpenLANE can also be run as interactively or as fully automated.
 #### 6.  Checks
 -   Magic - Performs DRC Checks & Antenna Checks
 -   Netgen - Performs LVS Checks
-- 
+#### back to [the top](#Advanced-Physical-Design-using-OpenLANE-and-Sky130)
+
 ## <a name="LAB_Day_1"></a>LAB Day 1
 
 #### File structure inside openLane directory
@@ -123,6 +126,7 @@ run_synthesis
 ```
 Synthesis takes some time based on the size and complexity of the design. Completion of the synthesis is displayed by "[INFO]: Synthesis is completed" message.
 ![](https://raw.githubusercontent.com/chyavanphadke/Physical-Design_using_OpenLANE_and_Sky130/main/Images/synthesis%20completed.png)
+#### back to [the top](#Advanced-Physical-Design-using-OpenLANE-and-Sky130)
 
 ## <a name="LAB_Day_2"></a>LAB Day 2
 
@@ -146,6 +150,7 @@ Synthesis takes some time based on the size and complexity of the design. Comple
 - Qflow GUI
 
 ![](https://raw.githubusercontent.com/chyavanphadke/Physical-Design_using_OpenLANE_and_Sky130/main/Images/qflowSuccess.png) 
+#### back to [the top](#Advanced-Physical-Design-using-OpenLANE-and-Sky130)
 
 ## <a name="LAB_Day_3"></a>LAB Day 3
 
@@ -205,6 +210,7 @@ qflow display picorv32 &
 ```
 The tkcon window and the magic window will open with the layout in it and the 'box' command gives the area estimation of the design.
 ![](https://raw.githubusercontent.com/chyavanphadke/Physical-Design_using_OpenLANE_and_Sky130/main/Images/lab3_layout.png)
+#### back to [the top](#Advanced-Physical-Design-using-OpenLANE-and-Sky130)
 
 ## <a name="LAB_Day_4"></a>LAB Day 4
 
@@ -251,6 +257,7 @@ Some techniques are used to achieve a good CTS
 -   H-Tree technique (midpoints to derive clock)
 -   Using buffers (since H-Tree do not avoid long paths, we need to put buffers)
 -   Net shielding (to avoid crosstalk/glitches)
+#### back to [the top](#Advanced-Physical-Design-using-OpenLANE-and-Sky130)
 
 ## <a name="LAB_Day_5"></a>LAB Day 5
 On day 5 the main concentration was on Routing and finishing up the Design.
