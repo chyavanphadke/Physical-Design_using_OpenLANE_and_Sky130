@@ -71,7 +71,7 @@ OpenLANE can also be run as interactively or as fully automated.
 -   OpenSTA : Performs static timing analysis on the resulting netlist to generate timing reports
 -   Fault : Scan-chain insertion used for testing post-fabrication. Supports ATPG and test patterns compaction
 
-#### <a name=" Floorplan_and_PDN"></a>2.  Floorplan and PDN
+#### <a name="Floorplan_and_PDN"></a>2.  Floorplan and PDN
 -   Init_fp - Defines the core area for the macro as well as the rows (used for placement) and the tracks (used for routing)
 -   Ioplacer - Places the macro input and output ports
 -   PDN - Generates the power distribution network
